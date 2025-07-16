@@ -127,3 +127,533 @@ body.dark-mode {
 body {
   transition: background 0.3s ease, color 0.3s ease;
 }
+/* Footer */
+footer {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+/* ===== GENERAL STYLES ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== HEADER & NAVIGATION ===== */
+header {
+  background-color: #2c3e50;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.main-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 2rem;
+}
+
+.main-nav a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.main-nav a:hover, .main-nav a.active {
+  background-color: #3498db;
+  color: white;
+}
+
+/* ===== SKILLS PAGE - COMPLETE STYLES ===== */
+
+/* Base Skills Container */
+.skills {
+  padding: 3rem 0;
+}
+
+.skills h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+/* Skill Category Cards */
+.skill-category {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.skill-category h3 {
+  color: #3498db;
+  margin-top: 0;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.skill-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-category li {
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+/* Progress Bar System - Color Coded Background Track */
+.skill-category li::before {
+  content: "";
+  display: block;
+  height: 8px;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  /* Default track color */
+  background: rgba(236, 240, 241, 0.5); 
+}
+
+/* Color-coded background tracks */
+li[data-percent="90"]::before { background: rgba(39, 174, 96, 0.2); }
+li[data-percent="85"]::before { background: rgba(46, 204, 113, 0.2); }
+li[data-percent="80"]::before { background: rgba(243, 156, 18, 0.2); }
+li[data-percent="75"]::before { background: rgba(230, 126, 34, 0.2); }
+li[data-percent="70"]::before { background: rgba(231, 76, 60, 0.2); }
+li[data-percent="65"]::before { background: rgba(192, 57, 43, 0.2); }
+li[data-percent="60"]::before { background: rgba(189, 195, 199, 0.2); }
+
+/* Progress Bar - Color Coded Fill */
+.skill-category li::after {
+  content: "";
+  display: block;
+  height: 8px;
+  border-radius: 4px;
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  transition: width 1s ease-in-out, background 0.5s ease;
+}
+
+/* Dynamic Widths and Colors */
+li[data-percent="90"]::after { 
+  width: 90%; 
+  background: linear-gradient(90deg, #27ae60, #2ecc71); 
+}
+li[data-percent="85"]::after { 
+  width: 85%; 
+  background: linear-gradient(90deg, #2ecc71, #f1c40f); 
+}
+li[data-percent="80"]::after { 
+  width: 80%; 
+  background: linear-gradient(90deg, #f39c12, #e67e22); 
+}
+li[data-percent="75"]::after { 
+  width: 75%; 
+  background: linear-gradient(90deg, #e67e22, #e74c3c); 
+}
+li[data-percent="70"]::after { 
+  width: 70%; 
+  background: linear-gradient(90deg, #e74c3c, #c0392b); 
+}
+li[data-percent="65"]::after { 
+  width: 65%; 
+  background: linear-gradient(90deg, #c0392b, #7f8c8d); 
+}
+li[data-percent="60"]::after { 
+  width: 60%; 
+  background: linear-gradient(90deg, #7f8c8d, #95a5a6); 
+}
+
+/* Color-Coded Percentage Text */
+.skill-level {
+  position: absolute;
+  right: 0;
+  font-weight: bold;
+}
+
+.skill-level[data-percent="90"] { color: #27ae60; }
+.skill-level[data-percent="85"] { color: #2ecc71; }
+.skill-level[data-percent="80"] { color: #f39c12; }
+.skill-level[data-percent="75"] { color: #e67e22; }
+.skill-level[data-percent="70"] { color: #e74c3c; }
+.skill-level[data-percent="65"] { color: #c0392b; }
+.skill-level[data-percent="60"] { color: #7f8c8d; }
+
+/* Optional Skill Legend */
+.skill-legend {
+  display: flex;
+  gap: 1.5rem;
+  margin: 2rem auto;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+
+.skill-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+/* Dark Mode Support */
+body.dark-mode .skills h2 {
+  color: #ecf0f1;
+}
+
+body.dark-mode .skill-category {
+  background: #1e1e1e;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .skill-category h3 {
+  color: #5dade2;
+  border-color: #2d3436;
+}
+
+body.dark-mode .skill-category li::before {
+  background: rgba(45, 52, 54, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skills {
+    padding: 2rem 1rem;
+  }
+  
+  .skill-category {
+    padding: 1rem;
+  }
+  
+  .skill-legend {
+    gap: 1rem;
+  }
+}
+/* ===== CONTACT PAGE SPECIFIC STYLES ===== */
+.contact-page {
+  padding: 3rem 0;
+  min-height: 70vh;
+}
+
+.contact-page h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Form Styles */
+.contact-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52,152,219,0.2);
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background: #2980b9;
+}
+
+/* Contact Info Styles */
+.contact-info {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contact-info h2 {
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+  gap: 1rem;
+}
+
+.contact-method i {
+  font-size: 1.5rem;
+  color: #3498db;
+}
+
+.contact-method a {
+  color: #2c3e50;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-method a:hover {
+  color: #3498db;
+  text-decoration: underline;
+}
+
+/* Rating Section (commented out in HTML) */
+.rating-group {
+  padding: 1rem 0;
+}
+
+.rating-options {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.rating-options label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+/* ===== DARK MODE SUPPORT ===== */
+body.dark-mode .contact-page h1 {
+  color: #ecf0f1;
+}
+
+body.dark-mode .contact-form {
+  background: #1e1e1e;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .contact-info {
+  background: #2d3436;
+}
+
+body.dark-mode .form-group label {
+  color: #ecf0f1;
+}
+
+body.dark-mode .contact-info h2 {
+  color: #ecf0f1;
+}
+
+body.dark-mode .contact-method a {
+  color: #bdc3c7;
+}
+
+body.dark-mode .contact-method a:hover {
+  color: #3498db;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+/* ===== ABOUT PAGE SPECIFIC STYLES ===== */
+.about {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  line-height: 1.7;
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.about h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #3498db;
+  margin: 0.5rem auto;
+  border-radius: 2px;
+}
+
+.about p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.about strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.about h3 {
+  color: #3498db;
+  margin: 2rem 0 1rem;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+/* Timeline-style education */
+.education-item {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.education-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.3rem;
+  width: 16px;
+  height: 16px;
+  background: #3498db;
+  border-radius: 50%;
+}
+
+.education-item::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 1.9rem;
+  bottom: -1.5rem;
+  width: 2px;
+  background: #ddd;
+}
+
+.education-item:last-child::after {
+  display: none;
+}
+
+/* ===== DARK MODE SUPPORT ===== */
+body.dark-mode .about {
+  background: #1e1e1e;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .about h2,
+body.dark-mode .about strong {
+  color: #ecf0f1;
+}
+
+body.dark-mode .about p {
+  color: #bdc3c7;
+}
+
+body.dark-mode .about h3 {
+  color: #5dade2;
+  border-color: #2d3436;
+}
+
+body.dark-mode .education-item::before {
+  background: #5dade2;
+}
+
+body.dark-mode .education-item::after {
+  background: #2d3436;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .about {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+  
+  .about h2 {
+    font-size: 2rem;
+  }
+}

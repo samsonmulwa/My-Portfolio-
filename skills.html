@@ -1,11 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  
+<header>
+  <div class="container">
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html" class="active">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
 <section class="skills">
   <h2>Technical Skills</h2>
+  
+  <!-- Skill Legend -->
+  <div class="skill-legend">
+    <div class="skill-legend-item">
+      <div class="skill-legend-color" style="background:#27ae60"></div>
+      <span>Expert (90%+)</span>
+    </div>
+    <div class="skill-legend-item">
+      <div class="skill-legend-color" style="background:#2ecc71"></div>
+      <span>Advanced (80-89%)</span>
+    </div>
+    <div class="skill-legend-item">
+      <div class="skill-legend-color" style="background:#f39c12"></div>
+      <span>Intermediate (70-79%)</span>
+    </div>
+    <div class="skill-legend-item">
+      <div class="skill-legend-color" style="background:#e67e22"></div>
+      <span>Developing (60-69%)</span>
+    </div>
+    <div class="skill-legend-item">
+      <div class="skill-legend-color" style="background:#e74c3c"></div>
+      <span>Beginner (<60%)</span>
+    </div>
+  </div>
+
+  <!-- Skills Categories -->
   <div class="skill-category">
-    <h3>Languages</h3>
+    <h3><i class="fas fa-code"></i> Languages</h3>
     <ul>
-      <li>Python <span class="skill-level">90%</span></li>
-      <li>JavaScript <span class="skill-level">85%</span></li>
-      <li>Java <span class="skill-level">75%</span></li>
+      <li data-percent="80">Python <span class="skill-level" data-percent="80">80%</span></li>
+      <li data-percent="75">JavaScript <span class="skill-level" data-percent="75">75%</span></li>
+      <li data-percent="65">Java <span class="skill-level" data-percent="65">65%</span></li>
     </ul>
   </div>
+
+  <div class="skill-category">
+    <h3><i class="fas fa-cubes"></i> Frameworks</h3>
+    <ul>
+      <li data-percent="66">React <span class="skill-level" data-percent="66">66%</span></li>
+      <li data-percent="63">Django <span class="skill-level" data-percent="63">63%</span></li>
+      <li data-percent="61">Node.js <span class="skill-level" data-percent="61">61%</span></li>
+    </ul>
+  </div>
+
+  <div class="skill-category">
+    <h3><i class="fas fa-database"></i> Databases</h3>
+    <ul>
+      <li data-percent="75">MySQL <span class="skill-level" data-percent="75">75%</span></li>
+      <li data-percent="64">MongoDB <span class="skill-level" data-percent="64">64%</span></li>
+      <li data-percent="62">PostgreSQL <span class="skill-level" data-percent="62">62%</span></li>
+    </ul>
+  </div>
+
+  <div class="skill-category">
+    <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
+    <ul>
+      <li data-percent="85">Git <span class="skill-level" data-percent="85">85%</span></li>
+      <li data-percent="60">Docker <span class="skill-level" data-percent="60">60%</span></li>
+      <li data-percent="67">AWS <span class="skill-level" data-percent="67">67%</span></li>
+    </ul> 
+  </div>
 </section>
+
+<footer>
+  <p>&copy; 2025 desamson. All rights reserved</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
